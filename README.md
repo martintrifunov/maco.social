@@ -1,9 +1,10 @@
 # maco.social made in Astro 🚀
 
-Progress (2/9) ❔ - Not Tested ❌
+Progress (4/10) ❔ - Not Tested ❌
 
 - [x] Init Astro Project
-- [ ] Responsive Header and Footer Components
+- [x] Responsive Header and Footer Components
+- [x] Dynamic Dark/Light mode
 - [ ] Responsive Home Page
 - [ ] Responsive Blog Page
 - [ ] Responsive Project Page

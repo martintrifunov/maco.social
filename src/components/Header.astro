@@ -1,0 +1,150 @@
+<header>
+  <a href="/maco.social/" id="nav-logo">maco</a>
+  <button
+    class="mobile-nav-toggle"
+    id="change-theme"
+    aria-controls="nav-links"
+    aria-expanded="false"><span class="visually-hidden">Menu</span></button
+  >
+  <nav>
+    <ul id="nav-links" data-visible="false">
+      <li class="nav-link">
+        <a href="/maco.social/projects" id="projects">Projects</a>
+      </li>
+      <li class="nav-link"><a href="/maco.social/blog">Blog</a></li>
+      <li class="nav-link">
+        <a id="icon"><i id="icon-swap" class="fa-solid fa-moon"></i></a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<style>
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background-color: var(--primary-color);
+  }
+  #nav-logo {
+    font-size: 1.2rem;
+  }
+  .nav-link {
+    margin-left: 20px;
+  }
+  .mobile-nav-toggle {
+    display: none;
+  }
+
+  @media (max-width: 35em) {
+    #nav-logo {
+      font-size: 1.5rem;
+    }
+
+    #nav-links {
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      z-index: 1000;
+      gap: 2em;
+      inset: 0 0 0 30%;
+      background: hsl(0, 0%, 0%, 0.5);
+      padding: min(30vh, 7.5rem) 2rem;
+      transform: translateX(100%);
+      transition: transform 350ms ease-out;
+    }
+
+    #nav-links[data-visible="true"] {
+      transform: translateX(0%);
+    }
+
+    .mobile-nav-toggle {
+      display: block;
+      position: absolute;
+      z-index: 9999;
+      background-color: transparent;
+      background-image: var(--dark-menu);
+      background-repeat: no-repeat;
+      border: 0;
+      width: 2rem;
+      aspect-ratio: 1;
+      top: 1rem;
+      right: 1rem;
+    }
+
+    .mobile-nav-toggle[aria-expanded="true"] {
+      background-image: var(--dark-cross);
+    }
+  }
+
+  @supports (backdrop-filter: blur(1rem)) {
+    @media (max-width: 35em) {
+      #nav-links {
+        background: hsl(0, 0%, 100%, 0.1);
+        backdrop-filter: blur(1rem);
+      }
+    }
+  }
+</style>
+
+<script>
+  const isPreferedThemeDark = window.matchMedia("(prefers-color-scheme: dark)");
+  const navLinks = document.querySelector("#nav-links");
+  const navToggle = document.querySelector(".mobile-nav-toggle");
+  let darkThemeToggle = document.getElementById("icon");
+  let iconSwap = document.getElementById("icon-swap");
+  let resizeTimer;
+
+  const toggleDarkMode = () => {
+    iconSwap.classList.remove("fa-solid");
+    iconSwap.classList.remove("fa-moon");
+    iconSwap.classList.add("fa-solid");
+    iconSwap.classList.add("fa-sun");
+  };
+
+  const toggleLightMode = () => {
+    iconSwap.classList.remove("fa-solid");
+    iconSwap.classList.remove("fa-sun");
+    iconSwap.classList.add("fa-solid");
+    iconSwap.classList.add("fa-moon");
+  };
+
+  //Set Preferred Theme based on System Theme
+  if (isPreferedThemeDark.matches) {
+    document.body.classList.add("dark-theme");
+    toggleDarkMode();
+  } else {
+    document.body.classList.remove("dark-theme");
+    toggleLightMode();
+  }
+
+  //Burger Menu Toggle
+  navToggle.addEventListener("click", () => {
+    const visibility = navLinks.getAttribute("data-visible");
+    if (visibility === "false") {
+      navLinks.setAttribute("data-visible", "true");
+      navToggle.setAttribute("aria-expanded", "true");
+    } else {
+      navLinks.setAttribute("data-visible", "false");
+      navToggle.setAttribute("aria-expanded", "false");
+    }
+  });
+
+  // DarkMode Toggle Function
+  darkThemeToggle.onclick = function () {
+    document.body.classList.toggle("dark-theme");
+
+    if (document.body.classList.contains("dark-theme")) toggleDarkMode();
+    else toggleLightMode();
+  };
+
+  //Disable animations when resizing window
+  window.addEventListener("resize", () => {
+    document.body.classList.add("resize-animation-stopper");
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      document.body.classList.remove("resize-animation-stopper");
+    }, 400);
+  });
+</script>

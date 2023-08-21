@@ -1,5 +1,5 @@
 :root {
-  /* Colors */
+  /* Text and BGs */
   --primary-color: hsl(220, 100%, 99%);
   --secondary-color: hsl(220, 100%, 99%);
   --text-color: hsl(0, 0%, 0%);
@@ -12,18 +12,40 @@
   --card_small: 26;
   --card_medium: 33;
   --card_large: 45;
+  /* SVGs */
+  --dark-menu: url("../assets/shared/bars-solid.svg");
+  --dark-cross: url("../assets/shared/cross.svg");
 }
 
 .dark-theme {
+  /* Text and BGs */
   --primary-color: #18191a;
   --secondary-color: #242526;
   --text-color: white;
   --text-hover-color: hsl(0, 0%, 78%);
+  /* SVGs */
+  --dark-menu: url("../assets/shared/bars-solid-white.svg");
+  --dark-cross: url("../assets/shared/cross-white.svg");
 }
 
 @font-face {
   font-family: Monocraft;
   src: url("../fonts/Monocraft.otf");
+}
+
+.visually-hidden:not(:focus):not(:active) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.resize-animation-stopper * {
+  transition: none !important;
+  animation: none !important;
 }
 
 * {
@@ -37,6 +59,7 @@
 body {
   background-color: var(--primary-color);
   color: var(--text-color);
+  overflow-x: hidden;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
