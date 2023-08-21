@@ -96,26 +96,42 @@
   let iconSwap = document.getElementById("icon-swap");
   let resizeTimer;
 
+  const setLocalTheme = (data) => {
+    localStorage.setItem("dark-theme", data);
+  };
+
+  const getLocalTheme = () => {
+    return localStorage.getItem("dark-theme");
+  };
+
+  //Theme Togglers
   const toggleDarkMode = () => {
+    document.body.classList.add("dark-theme");
     iconSwap.classList.remove("fa-solid");
     iconSwap.classList.remove("fa-moon");
     iconSwap.classList.add("fa-solid");
     iconSwap.classList.add("fa-sun");
+    setLocalTheme(true);
   };
 
   const toggleLightMode = () => {
+    document.body.classList.remove("dark-theme");
     iconSwap.classList.remove("fa-solid");
     iconSwap.classList.remove("fa-sun");
     iconSwap.classList.add("fa-solid");
     iconSwap.classList.add("fa-moon");
+    setLocalTheme(false);
   };
 
-  //Set Preferred Theme based on System Theme
-  if (isPreferedThemeDark.matches) {
-    document.body.classList.add("dark-theme");
+  //Set Theme from local storage
+  if (getLocalTheme() === "true") {
     toggleDarkMode();
-  } else {
-    document.body.classList.remove("dark-theme");
+  } else toggleLightMode;
+
+  //Set Preferred Theme based on System Theme
+  if (isPreferedThemeDark.matches && !getLocalTheme()) {
+    toggleDarkMode();
+  } else if (!isPreferedThemeDark.matches && !getLocalTheme()) {
     toggleLightMode();
   }
 
