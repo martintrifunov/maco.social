@@ -15,6 +15,10 @@
   /* SVGs */
   --dark-menu: url("../assets/shared/bars-solid.svg");
   --dark-cross: url("../assets/shared/cross.svg");
+  --dark-github: url("../assets/shared/github.svg");
+  --dark-mail: url("../assets/shared/mail.svg");
+  --dark-linkedin: url("../assets/shared/linkedin.svg");
+  --dark-toggle-icon: url("../assets/shared/sun.svg");
 }
 
 .dark-theme {
@@ -26,6 +30,10 @@
   /* SVGs */
   --dark-menu: url("../assets/shared/bars-solid-white.svg");
   --dark-cross: url("../assets/shared/cross-white.svg");
+  --dark-github: url("../assets/shared/github-white.svg");
+  --dark-mail: url("../assets/shared/mail-white.svg");
+  --dark-linkedin: url("../assets/shared/linkedin-white.svg");
+  --dark-toggle-icon: url("../assets/shared/sun.svg");
 }
 
 @font-face {

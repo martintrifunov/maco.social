@@ -1,25 +1,25 @@
 <footer>
-  <ul>
+  <ul id="footer-links">
     <li>
       <a
         href="https://github.com/martintrifunov"
         target="_blank"
-        class="footer-link"><i class="fa-brands fa-github"></i></a
-      >
+        class="footer-link"
+        id="github"></a>
     </li>
     <li>
       <a
         href="mailto:martintrifunov@proton.me"
         target="_blank"
-        class="footer-link"><i class="fa-solid fa-envelope"></i></a
-      >
+        class="footer-link"
+        id="mail"></a>
     </li>
     <li>
       <a
-        href="https://leetcode.com/martintrifunov/"
+        href="https://www.linkedin.com/in/martin-trifunov/"
         target="_blank"
-        class="footer-link"><i class="fa-solid fa-code"></i></a
-      >
+        class="footer-link"
+        id="linkedin"></a>
     </li>
   </ul>
   <p id="copyright-footer">&copy; 2022-2023 Martin Trifunov</p>
@@ -33,7 +33,14 @@
     margin-top: auto;
     margin-bottom: 20px;
   }
+  #footer-links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
   .footer-link {
+    display: flex;
     margin-left: 15px;
     font-size: 1.5rem;
   }
@@ -41,5 +48,30 @@
     margin-top: 15px;
     color: var(--text-hover-color);
     text-align: center;
+  }
+
+  #github {
+    background-color: transparent;
+    background-image: var(--dark-github);
+    background-repeat: no-repeat;
+    width: 2rem;
+    aspect-ratio: 1;
+  }
+
+  #mail {
+    background-color: transparent;
+    background-image: var(--dark-mail);
+    background-repeat: no-repeat;
+    width: 2rem;
+    aspect-ratio: 1;
+    margin-top: 10px;
+  }
+  #linkedin {
+    background-color: transparent;
+    background-image: var(--dark-linkedin);
+    background-repeat: no-repeat;
+    width: 2rem;
+    aspect-ratio: 1;
+    margin-bottom: 9px;
   }
 </style>
