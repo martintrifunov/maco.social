@@ -1,0 +1,22 @@
+---
+import "../styles/global.css";
+
+export interface Props {
+  title?: string;
+}
+
+const { title = "maco" } = Astro.props as Props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/457f86cc14.js"
+      crossorigin="anonymous"></script>
+    <title>{title}</title>
+  </head>
+  <body><slot /></body>
+</html>

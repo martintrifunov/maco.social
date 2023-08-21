@@ -1,0 +1,65 @@
+:root {
+  /* Colors */
+  --primary-color: hsl(220, 100%, 99%);
+  --secondary-color: hsl(220, 100%, 99%);
+  --text-color: hsl(0, 0%, 0%);
+  --text-hover-color: hsl(0, 0%, 33%);
+  --button-color: rgb(202, 242, 255);
+  /* Post Variables */
+  --card_width: 250px;
+  --card_border_radius: 16px;
+  --row_increment: 10px;
+  --card_small: 26;
+  --card_medium: 33;
+  --card_large: 45;
+}
+
+.dark-theme {
+  --primary-color: #18191a;
+  --secondary-color: #242526;
+  --text-color: white;
+  --text-hover-color: hsl(0, 0%, 78%);
+}
+
+@font-face {
+  font-family: Monocraft;
+  src: url("../fonts/Monocraft.otf");
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Monocraft;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  color: var(--text-color);
+  text-decoration: none;
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+}
+
+a:hover {
+  color: var(--text-hover-color);
+  transform: translateY(-2px);
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul li {
+  display: inline;
+}
