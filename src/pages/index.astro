@@ -2,7 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="maco - Home">
+<Layout title="maco">
   <div class="index-container">
     <section class="intro-section">
       <h1 id="introduction">Hi, I'm Martin Trifunov</h1>
@@ -46,6 +46,7 @@ import Layout from "../layouts/Layout.astro";
   }
   #about-paragraph {
     margin-top: 15px;
+    line-height: 1.4rem;
   }
 
   @media (min-width: 35em) and (max-width: 55em) {
@@ -67,6 +68,15 @@ import Layout from "../layouts/Layout.astro";
       margin-top: 20%;
       margin-right: 10%;
       margin-left: 10%;
+    }
+    #about-paragraph {
+      text-align: start;
+    }
+  }
+
+  @media (max-width: 280px) {
+    #about-paragraph {
+      line-height: 1.2rem;
     }
   }
 </style>

@@ -2,4 +2,23 @@
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="maco - Projects"><h1>Under Construction 🚧</h1></Layout>
+<Layout title="maco - projects">
+  <div class="projects-container">
+    <h1>Under Construction 🚧</h1>
+  </div>
+</Layout>
+
+<style>
+  .projects-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+  }
+
+  @media (max-width: 35em) {
+    .projects-container {
+      font-size: 0.6rem;
+    }
+  }
+</style>

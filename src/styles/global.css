@@ -5,6 +5,8 @@
   --text-color: hsl(0, 0%, 0%);
   --text-hover-color: hsl(0, 0%, 33%);
   --button-color: rgb(202, 242, 255);
+  --tags-color: hsl(0, 2%, 88%);
+  --shadow-color: rgba(0, 0, 0, 0.4);
   /* Post Variables */
   --card_width: 250px;
   --card_border_radius: 16px;
@@ -27,6 +29,8 @@
   --secondary-color: #242526;
   --text-color: white;
   --text-hover-color: hsl(0, 0%, 78%);
+  --tags-color: hsl(0, 0%, 16%);
+  --shadow-color: rgba(255, 255, 255, 0.2);
   /* SVGs */
   --dark-menu: url("../assets/shared/bars-solid-white.svg");
   --dark-cross: url("../assets/shared/cross-white.svg");
@@ -93,4 +97,8 @@ ul {
 
 ul li {
   display: inline;
+}
+pre {
+  border-radius: 15px;
+  padding: 15px 20px;
 }

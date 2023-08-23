@@ -8,7 +8,7 @@ Progress (7/10) ❔ - Not Tested ❌
 - [x] Responsive Home Page
 - [x] Responsive Blog Page
 - [ ] Responsive Project Page
-- [ ] MD Blog Post Component
+- [ ] MD Blog Post and Project Component (Partial)❔
 - [ ] Transition Animations
 - [x] Deploy to Github Pages
 - [x] Add custom TLD
